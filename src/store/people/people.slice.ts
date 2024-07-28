@@ -1,6 +1,6 @@
 import { createSlice, UnknownAction, PayloadAction } from '@reduxjs/toolkit';
 import { PeopleResponseModel } from '../types';
-import { fetchPeople } from './peopleThunk';
+import { fetchPeople } from './people.thunk';
 
 export interface PeopleState {
   isLoading: boolean,

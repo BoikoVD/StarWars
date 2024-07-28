@@ -1,0 +1,15 @@
+.personCard {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.personCard:hover {
+    background-color: var(--primary);
+    color: var(--black);
+}

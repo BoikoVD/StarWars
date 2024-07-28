@@ -17,3 +17,11 @@ body {
   background-color: var(--black);
   color: var(--white);
 }
+
+ul {
+  padding: 0;
+}
+
+ul li {
+	list-style: none;
+}

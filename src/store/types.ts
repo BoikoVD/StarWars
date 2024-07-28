@@ -9,7 +9,7 @@ interface BaseResponseModel {
 	previous: string | null,
 }
 
-interface PersonModel {
+export interface PersonModel {
     "id": number,
     "name": string,
     "height": string,
