@@ -3,6 +3,14 @@ export const pathKeys = {
     home() {
         return pathKeys.root
     },
+    people: {
+        root() {
+            return pathKeys.root.concat('people/')
+        },
+        bySlug({ slug }: { slug: number }) {
+            return pathKeys.people.root().concat(slug.toString(), '/')
+        },
+    },
     person: {
         root() {
             return pathKeys.root.concat('person/')

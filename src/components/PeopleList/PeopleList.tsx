@@ -1,23 +1,24 @@
-import { PersonModel } from '../../store';
+import { useAppSelector } from '../../store';
 import { PersonCard } from './PersonCard/PersonCard';
 import styles from './PeopleList.module.css';
+import { PeopleListPagination } from './PeopleListPagination/PeopleListPagination';
+import { ErrorMessageBox } from './ErrorMessageBox/ErrorMessageBox';
 
-interface PropsModel {
-    peopleData?: PersonModel[],
-}
-
-export function PeopleList(props: PropsModel) {
-    const { peopleData } = props;
-
-    if (!peopleData || !peopleData.length) {
-        return null;
-    }
+export function PeopleList() {
+    const { data, error } = useAppSelector(state => state.people);
 
     return (
-        <ul className={styles.list}>
-            {peopleData.map((person) => <li>
-                <PersonCard name={person.name}/>
-            </li>)}
-        </ul>
+        <>
+            {error
+                ? <ErrorMessageBox errorMessage={error} />
+                : data?.results && data.results.length
+                    ? <ul className={styles.list}>
+                        {data?.results && data.results.map((person) => <li key={person.id}>
+                            <PersonCard name={person.name} />
+                        </li>)}
+                    </ul>
+                    : <div className={styles.noData}>No Data</div>}
+            <PeopleListPagination />
+        </>
     );
 };

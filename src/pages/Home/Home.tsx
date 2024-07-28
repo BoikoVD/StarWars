@@ -1,28 +1,22 @@
 import { useLayoutEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/store";
+import { useParams } from 'react-router-dom';
+import { useAppDispatch } from "../../store/store";
 import { fetchPeople } from "../../store";
 import { PeopleList } from "../../components";
 import styles from './Home.module.css';
 
 export function Home() {
-  const { data, isLoading, error } = useAppSelector(state => state.people);
+  const { page } = useParams();
   const dispatch = useAppDispatch();
 
   useLayoutEffect(() => {
-    if (!data && !isLoading) {
-      dispatch(fetchPeople());
-    }
-  }, []);
+    dispatch(fetchPeople(Number(page)));
+  }, [page]);
 
   return (
-    <main>
-      <section>
-        {isLoading
-          ? <div>Loading...</div>
-          : error
-            ? <div>Error: {error}</div>
-            : <PeopleList peopleData={data?.results} />
-        }
+    <main className={styles.main}>
+      <section className={styles.section}>
+        <PeopleList />
       </section>
     </main>
   );

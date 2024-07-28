@@ -1,0 +1,29 @@
+.paginationContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.changePageButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.changePageButton:hover:enabled {
+    background-color: var(--primary);
+    color: var(--black);
+}
+
+.changePageButton:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
