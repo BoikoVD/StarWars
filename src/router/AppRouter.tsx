@@ -7,7 +7,7 @@ import {
 import { pathKeys } from '../utils/routesConfig';
 import { homePageRoute } from '../pages/Home/Home.route';
 import { page404Route } from '../pages/Page404/Page404.route';
-
+import { Layout } from '../components';
 
 function BubbleError() {
     const error = useRouteError();
@@ -18,8 +18,10 @@ function BubbleError() {
 const router = createBrowserRouter([{
     errorElement: <BubbleError />,
     children: [
-        homePageRoute,
-        page404Route,
+        {
+            element: <Layout />,
+            children: [homePageRoute, page404Route]
+        },
         {
             loader: async () => redirect(pathKeys.page404()),
             path: '*',
