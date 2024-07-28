@@ -5,9 +5,8 @@ import {
     useRouteError,
 } from 'react-router-dom';
 import { pathKeys } from '../utils/routesConfig';
-import { homePageRoute } from '../pages/Home/Home.route';
-import { page404Route } from '../pages/Page404/Page404.route';
 import { Layout } from '../components';
+import { homePageRoute, page404Route } from '../pages';
 
 function BubbleError() {
     const error = useRouteError();

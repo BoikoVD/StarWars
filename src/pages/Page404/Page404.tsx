@@ -1,7 +1,6 @@
-import React from 'react';
 import styles from './Home.module.css';
 
-function Page404() {
+export function Page404() {
   return (
     <main>
       <section>
@@ -9,6 +8,4 @@ function Page404() {
       </section>
     </main>
   );
-}
-
-export default Page404;
+};

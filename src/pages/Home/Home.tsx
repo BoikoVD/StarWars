@@ -1,7 +1,8 @@
-import React from 'react';
 import styles from './Home.module.css';
 
-function Home() {
+export function Home() {
+
+  
   return (
     <main>
       <section>
@@ -9,6 +10,4 @@ function Home() {
       </section>
     </main>
   );
-}
-
-export default Home;
+};
