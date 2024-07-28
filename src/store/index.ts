@@ -3,5 +3,6 @@ export { useAppDispatch } from './store';
 export { useAppSelector } from './store';
 
 export { fetchPeople } from './people/people.thunk';
+export { fetchPersonData } from './person/person.thunk';
 
 export type { PersonModel } from './types';

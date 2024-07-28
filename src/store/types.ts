@@ -29,6 +29,52 @@ export interface PersonModel {
     "url": string
 }
 
+export interface FilmModel {
+    "characters": number[],
+    "created": string,
+    "director": string,
+    "edited": string,
+    "episode_id": 4,
+    "opening_crawl": string,
+    "planets": number[],
+    "producer": string,
+    "release_date": string,
+    "species": number[],
+    "starships": number[],
+    "title": string,
+    "url": string,
+    "vehicles": number[]
+}
+
+export interface StarshipModel {
+    "MGLT": string,
+    "cargo_capacity": string,
+    "consumables": string,
+    "cost_in_credits": string,
+    "created": string,
+    "crew": string,
+    "edited": string,
+    "hyperdrive_rating": string,
+    "length": string,
+    "manufacturer": string,
+    "max_atmosphering_speed": string,
+    "model": string,
+    "name": string,
+    "passengers": string,
+    "films": number[],
+    "pilots": number[],
+    "starship_class": string,
+    "url": string
+}
+
 export interface PeopleResponseModel extends BaseResponseModel {
     results: PersonModel[]
+}
+
+export interface FilmsResponseModel extends BaseResponseModel {
+    results: FilmModel[]
+}
+
+export interface StarshipsResponseModel extends BaseResponseModel {
+    results: StarshipModel[]
 }
