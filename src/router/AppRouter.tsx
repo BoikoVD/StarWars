@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { pathKeys } from '../utils/routesConfig';
 import { Layout } from '../components';
-import { homePageRoute, page404Route } from '../pages';
+import { homePageRoute, page404Route, personDetailsPageRoute } from '../pages';
 
 function BubbleError() {
     const error = useRouteError();
@@ -19,7 +19,7 @@ const router = createBrowserRouter([{
     children: [
         {
             element: <Layout />,
-            children: [homePageRoute, page404Route]
+            children: [homePageRoute, personDetailsPageRoute, page404Route]
         },
         {
             loader: async () => redirect(pathKeys.page404()),

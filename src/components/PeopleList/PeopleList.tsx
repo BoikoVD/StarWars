@@ -14,7 +14,7 @@ export function PeopleList() {
                 : data?.results && data.results.length
                     ? <ul className={styles.list}>
                         {data?.results && data.results.map((person) => <li key={person.id}>
-                            <PersonCard name={person.name} />
+                            <PersonCard name={person.name} id={person.id} />
                         </li>)}
                     </ul>
                     : <div className={styles.noData}>No Data</div>}

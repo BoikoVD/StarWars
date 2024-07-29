@@ -30,6 +30,7 @@ export interface PersonModel {
 }
 
 export interface FilmModel {
+    "id": number,
     "characters": number[],
     "created": string,
     "director": string,
@@ -47,6 +48,7 @@ export interface FilmModel {
 }
 
 export interface StarshipModel {
+    "id": number,
     "MGLT": string,
     "cargo_capacity": string,
     "consumables": string,

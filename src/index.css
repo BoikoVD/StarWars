@@ -19,6 +19,10 @@ body {
   color: var(--white);
 }
 
+#root {
+  height: 100svh;
+}
+
 ul {
   padding: 0;
 }

@@ -15,8 +15,8 @@ export const pathKeys = {
         root() {
             return pathKeys.root.concat('person/')
         },
-        bySlug({ slug }: { slug: string }) {
-            return pathKeys.person.root().concat(slug, '/')
+        bySlug({ slug }: { slug: number }) {
+            return pathKeys.person.root().concat(slug.toString(), '/')
         },
     },
     page404() {
