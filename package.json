@@ -5,7 +5,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^15.0.6",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.104",
@@ -35,6 +35,14 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    },
+    "transformIgnorePatterns": [
+      "!node_modules/"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -48,6 +56,7 @@
     ]
   },
   "devDependencies": {
-    "@types/d3-hierarchy": "^3.1.7"
+    "@types/d3-hierarchy": "^3.1.7",
+    "axios-mock-adapter": "^1.22.0"
   }
 }

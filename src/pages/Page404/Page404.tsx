@@ -1,4 +1,4 @@
-import styles from './Home.module.css';
+import styles from './Page404.module.css';
 
 export function Page404() {
   return (
