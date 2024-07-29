@@ -1,12 +1,16 @@
 .personCard {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 10px 20px;
     border: 2px solid var(--primary);
     border-radius: 8px;
     color: var(--white);
     text-decoration: none;
     transition: all 0.3s ease 0s;
+    height: 100%;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .personCard:hover {

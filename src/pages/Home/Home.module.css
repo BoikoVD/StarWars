@@ -2,10 +2,13 @@
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    max-height: 100svh;
 }
 
 .section {
     flex: 1 1 auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

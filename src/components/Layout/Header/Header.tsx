@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import LogoImage from '../../../assets/images/logo.webp';
+import BackArrowIcon from '../../../assets/icons/back_icon.svg';
 import styles from './Header.module.css';
 
 export function Header() {
@@ -18,7 +19,8 @@ export function Header() {
     <header className={styles.header}>
       {location.pathname.includes('/person') && 
         <button className={styles.goBackBtn} onClick={goBackHandler}>
-          Go Back
+          <img src={BackArrowIcon} alt="icon"/>
+          <span>Go Back</span>
         </button>}
       {location.pathname.includes('/404') && 
         <button className={styles.goBackBtn} onClick={goHomeHandler}>
