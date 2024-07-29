@@ -16,6 +16,8 @@
     color: var(--white);
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    z-index: 11;
+    background-color: var(--black);
 }
 
 .changePageButton:hover:enabled {
