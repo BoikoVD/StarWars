@@ -1,5 +1,30 @@
 # Star Wars
 
+## Getting Started
+
+### Prerequisites
+
+Before getting started, make sure you have these tools installed:
+
+- [Git](https://git-scm.com/)
+- [Node.js v18](https://nodejs.org/en/)
+
+### Installation
+
+Provided you have all prerequisites ready, you can install the application with the following command:
+
+```sh
+npm install
+```
+
+### Environment variables
+
+Setup environment variables:
+
+```sh
+cp .env.example .env
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
