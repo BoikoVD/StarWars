@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useCallback, useLayoutEffect } from "react";
 import { ReactFlow, Controls, Background, ReactFlowProvider, useReactFlow, useNodesState, useEdgesState, type Node, type Edge } from '@xyflow/react';
 import { stratify, tree } from 'd3-hierarchy';
 import { useAppSelector } from '../../store';
@@ -34,6 +34,21 @@ function LayoutFlow() {
     const { fitView } = useReactFlow();
     const [nodes, setNodes] = useNodesState<Node>([]);
     const [edges, setEdges] = useEdgesState<Edge>([]);
+
+    const onLayout = useCallback(
+        (nodes: Node[], edges:Edge[]) => {
+          const { nodes: layoutedNodes, edges: layoutedEdges } =
+            getLayoutedElements(nodes, edges);
+    
+          setNodes([...layoutedNodes]);
+          setEdges([...layoutedEdges]);
+    
+          window.requestAnimationFrame(() => {
+            fitView();
+          });
+        },
+        [nodes, edges],
+    );
 
     useLayoutEffect(() => {
         if (!personData || !filmsData || !starshipsData) {
@@ -95,19 +110,18 @@ function LayoutFlow() {
             })
         });
 
-        const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(newNodes, newEdges);
+        setNodes([...newNodes]);
+        setEdges([...newEdges]);
 
-        setNodes([...layoutedNodes]);
-        setEdges([...layoutedEdges]);
-
-        window.requestAnimationFrame(() => {
-            fitView();
-        });
+        setTimeout(() => {
+            onLayout(newNodes, newEdges);
+        }, 10)
+        
     }, [personData, filmsData, starshipsData]);
 
     return (
         <div className={styles.wrapper}>
-            <ReactFlow nodes={nodes} edges={edges} colorMode="dark">
+            <ReactFlow nodes={nodes} edges={edges} colorMode="dark" key={'personFlow'}>
                 <Background />
                 <Controls />
             </ReactFlow>
